@@ -34,9 +34,7 @@ async def servermap(ctx):
     support_button = Button(label="الدعم", emoji="🎧", style=discord.ButtonStyle.secondary)
 
     async def rules_callback(interaction):
-        await interaction.response.send_message("  الرومات
-
-
+        await interaction.response.send_message("""
 ╭━━─☾ ---------- ☽─━━╮
 
 الـرومــات :DZT~1:
@@ -141,8 +139,8 @@ async def servermap(ctx):
 
 جديد بلوكس فروت من أخبار و متجر فواكهها
 
-
-╰━━─☾ --------- ☽─━━╯"
+...
+╰━━─☾ --------- ☽─━━╯"""
 , ephemeral=True)
 
     async def rank_callback(interaction):

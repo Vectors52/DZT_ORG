@@ -26,7 +26,7 @@ async def servermap(ctx):
     )
 
     embed.set_image(url="https://i.imgur.com/8nQ5KqX.png")
-    embed.set_thumbnail(url="https://cdn-icons-png.flaticon.com/512/25/25694.png")
+    embed.set_thumbnail(url="https://i.imgur.com/F5La6FP.png")
 
     # الأزرار
     rules_button = Button(label="القوانين", emoji="📕", style=discord.ButtonStyle.primary)

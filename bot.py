@@ -25,7 +25,7 @@ async def servermap(ctx):
         color=0xff0000
     )
 
-    embed.set_image(url="https://i.imgur.com/8nQ5KqX.png")
+    embed.set_image(url="https://i.imgur.com/F5La6FP.png")
     embed.set_thumbnail(url="https://i.imgur.com/F5La6FP.png")
 
     # الأزرار

@@ -31,7 +31,7 @@ async def servermap(ctx):
     # الأزرار
     rules_button = Button(label="الخريطه", emoji="📕", style=discord.ButtonStyle.primary)
     rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
-    support_button = Button(label="الدعم", emoji="🎧", style=discord.ButtonStyle.secondary)
+    support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
 
     async def rules_callback(interaction):
         await interaction.response.send_message("""
@@ -211,7 +211,20 @@ async def servermap(ctx):
 """, ephemeral=True)
 
     async def support_callback(interaction):
-        await interaction.response.send_message("اذهب إلى الدعم 👉 <#ID_HERE>", ephemeral=True)
+        await interaction.response.send_message("""نـظـام الـبـوسـت
+• البوست :1000018612: = 120 :rob:
+
+• دبل بوست :1000018612: = 300 :rob:
+
+• ملاحظه : ❗❗❗
+
+• تشيل البوست باند مدى الحياه خذ حذرك
+
+ولاتشيل البوست :E24A_Red:
+
+• لاستلام :rob: افتح تكت
+
+• في حال مرت 24 ساعه بدون فتح تكت لن يتم تسليمك :rob:...""", ephemeral=True)
 
     rules_button.callback = rules_callback
     rank_button.callback = rank_callback

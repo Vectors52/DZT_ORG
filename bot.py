@@ -35,7 +35,7 @@ async def servermap(ctx):
 
     async def rules_callback(interaction):
         await interaction.response.send_message("""
-/activ**
+
 
 ╭━━─☾ ---------- ☽─━━╮
 
@@ -142,9 +142,7 @@ __ الـرومــات <a:DZT:1352711674108575825>  __
 - جديد بلوكس فروت من أخبار و متجر فواكهها 
 
 
-╰━━─☾  ---------  ☽─━━╯
-
-**e-dev-badge"""
+╰━━─☾  ---------  ☽─━━╯"""
 , ephemeral=True)
 
     async def rank_callback(interaction):

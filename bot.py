@@ -26,7 +26,7 @@ async def servermap(ctx):
     )
 
     embed.set_image(url="https://i.imgur.com/F5La6FP.png")
-    embed.set_thumbnail(url="https://i.imgur.com/F5La6FP.png")
+    embed.set_thumbnail(url="https://i.imgur.com/rO3pb7D.gif")
     embed.set_footer(text="© DEREK DZT BOT")
 
     # ================= BUTTONS =================

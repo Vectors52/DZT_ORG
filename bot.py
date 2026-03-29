@@ -4,6 +4,7 @@ from discord.ui import Button, View
 import os
 
 intents = discord.Intents.all()
+intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
@@ -20,226 +21,149 @@ async def servermap(ctx):
 
     embed = discord.Embed(
         title="خريطة السيرفر",
-        description="""نرجوا من كل الأعضاء قراءة خريطة السيرفر وخاصة الجدد سواء الرومات أو الرتب
-لمعرفة كل ما يخص السيرفر ونيل أفضل تجربة فيه.""",
+        description="نرجو من جميع الأعضاء قراءة خريطة السيرفر عبر الأزرار بالأسفل 👇",
         color=0xff0000
     )
 
     embed.set_image(url="https://i.imgur.com/F5La6FP.png")
     embed.set_thumbnail(url="https://i.imgur.com/F5La6FP.png")
+    embed.set_footer(text="© DEREK DZT BOT")
 
-    # الأزرار
-    rules_button = Button(label="الخريطه", emoji="📕", style=discord.ButtonStyle.primary)
+    # ================= BUTTONS =================
+
+    rules_button = Button(label="الخريطة", emoji="📕", style=discord.ButtonStyle.primary)
     rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
     support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
 
-    async def rules_callback(interaction):
-        await interaction.response.send_message("""
+    # ================= MAP BUTTON =================
+    async def rules_callback(interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
 
-> **/activ**
-> 
-> ╭━━─☾ ---------- ☽─━━╮
-> 
-> __ الـرومــات :DZT~1:  __
-> 
-> 
-> - :1DZT:   #:blue_book:│𝐑𝐮𝐥𝐞𝐬・القوانين  
-> 
-> 
-> - أهم ما يجب إتباعه بالسيرفر لأحسن تجربة 
-> 
-> 
-> - :2DZT:  #:loudspeaker:│𝐍𝐞𝐰𝐬・اخبار・السيرفر 
-> 
-> 
-> - جديد و تحديثات السيرفر 
-> 
-> 
-> - :3DZT:  #:round_pushpin:│𝐑𝐨𝐥𝐞𝐬・اختر・رتبك 
-> 
-> 
-> - رتب إشعارات ما يهمك من الألعاب و المجالات 
-> 
-> 
-> - :4DZT:  #:envelope:│𝐓𝐢𝐜𝐤𝐞𝐭・التذكرة 
-> 
-> 
-> - الدعم الفني لطرح المشاكل, الشكاوي ، الإستفسارات و غيرها
-> 
-> 
-> -  :5DZT: #:ribbon:│𝐕𝐞𝐫𝐢𝐟𝐲・𝐓𝐢𝐜𝐤𝐞𝐭・تذكرة・التوثيق 
-> 
-> 
-> - إمكانية التوثيق بالنسبة للبنات 
-> 
-> 
-> -  :6DZT:   #:crystal_ball:│𝐁𝐨𝐨𝐬𝐭𝐬・بوستات 
-> 
->  
-> - روم يظهر داعمين السيرفر ببوست و المميزات الحصرية لهم 
-> 
-> 
-> 
-> ━━─☾  ------------  ☽─━━
-> 
-> 
-> -  :1DZT:  #:thought_balloon:│𝐆𝐞𝐧𝐞𝐫𝐚𝐥-𝐂𝐡𝐚𝐭・شات・عام 
-> 
-> 
-> - مكان الدردشة و الترفيه 
-> 
-> 
-> -  :2DZT:   https://discord.com/channels/1346826603526619206/1486722908821913692 
-> 
-> 
-> - روم خاص بتبادلات كل بلوكس فروت .
-> 
-> 
-> -  :3DZT:   https://discord.com/channels/1346826603526619206/1487247807831212054 
-> 
-> 
-> - تقديم و إستقبال أذكار و مقاطع مفيدة دينية 
-> 
-> 
-> -  :4DZT:   #:robot:│𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬・الأوامر 
-> 
-> 
-> - إستعمال أوامر البوت 
-> 
-> 
-> -  :5DZT:   #:dizzy:│𝐋𝐞𝐯𝐞𝐥・المستوى 
-> 
-> 
-> 
-> - معرفة مستواك التفاعلي في السيرفر 
-> 
-> 
-> -  :6DZT:  https://discord.com/channels/1346826603526619206/1360004700887453966
-> 
-> 
-> - إنشاء روم صوتي مؤقت خاص بك ، و للتحكم به يمكنك التوجه إلى
-> 
->  https://discord.com/channels/1346826603526619206/1360006848123637790
-> 
-> 
-> - :7DZT:  #:handshake:│𝐭𝐫𝐚𝐝𝐞・التريد 
-> 
-> 
-> - يمكنكم تبادل اغلب الاشياء داخل الروم مثل روبلوكس ، باونتي الخخ.. 
-> 
-> 
-> - :8DZT:  #:envelope:│𝐓𝐢𝐜𝐤𝐞𝐭・التذكرة 
-> 
-> 
-> - يمكنكم طلب وسيط لضمان تبادلاتكم من خلاله .
-> 
-> 
-> ━━─☾  ------------  ☽─━━
-> 
-> 
-> - :1DZT: https://discord.com/channels/1346826603526619206/1486724525415731250
-> 
-> 
-> - جديد بلوكس فروت من أخبار و متجر فواكهها 
-> 
-> 
-> ╰━━─☾  ---------  ☽─━━╯
-> 
-> **e-dev-badge**"""
-, ephemeral=True)
+        map_embed = discord.Embed(
+            title="Map / خريطة السيرفر",
+            description="""/activ**
 
-    async def rank_callback(interaction):
-        await interaction.response.send_message("""الـرتـب
-@.⭒☆ TRAINER ┃ مـتـدرب ☆⭒.
-الخواص : شكل بس,
-الشروط : 5 لفل كتابي,
-@.⭒☆ SOLDIER ┃ الـجـنـدي ☆⭒.
-الخواص : رياكشن,
-الشروط : 10 لفل كتابي,
-@.⭒☆ WARRIOR ┃ مـحـارب ☆⭒.
-الخواص : سوي ستيكرات من سيرفرات اخرى,
-الشروط :  15 لفل كتابي,
-@.⭒☆ KNIGHT ┃ الـفـارس ☆⭒.
-الخواص : 1- تقدر تسوي soundbord,
-2- تقدر تسوي soundbord من سيرفرات اخرى
-الشروط :  25 لفل كتابي,
-@.⭒☆ COLONEL ┃ الـعـقـيـد ☆⭒.
-الخواص : تقدر ترسل صور بشات العام,
-الشروط :  35 لفل كتابي,
-@.⭒☆ SIR ┃ الـسـيـر ☆⭒.
-الخواص :  تقدر تسوي gif,
-الشروط : 45 لفل كتابي,
-@.⭒☆ COLONEL ┃ الـعـقـيـد ☆⭒.
-الخواص :  جميع ما سبق,
-الشروط : 1- 60 لفل كتابي,
-2- 5 لفل صوتي
-@.⭒☆ KING ┃ الـمـلـك ☆⭒.
-الخواص : جميع ما سبق,
-الشروط  : 1-  75 لفل كتابي,
-2- 10 صوتي
-@𝐌𝐫.
-الخواص : جميع ما سبق,
-الشروط,
-100 لفل كتابي,
-17 لفل صوتي,
-@𝐓𝐨𝐩 𝐚𝐜𝐭𝐢𝐯𝐞
-تاخذ توب اسبوعي في تفاعل,
+╭━━─☾ ---------- ☽─━━╮
 
-@𝐃𝐙𝐓 丶𝐒𝐭𝐫𝐞𝐚𝐦𝐞𝐫
-الشرط : تكون ستريمر,
-الخواص : جميع خواص رتب تفاعليه في رتبه واحده,
+__ الـرومــات <a:DZT:1352711674108575825>  __
 
-@𝐃𝐙𝐓 丶𝐘𝐨𝐮𝐭𝐮𝐛𝐞𝐫
-الشروط :  1 - يكون معك 4 الاف مشترك,
-2 - 8 الاف مشاهده عل مقطع
-3 - مايهم اذا محتواك مش روبلكس او لا بس ممنوع تنشر هاك
+- <:1DZT:1475478821133221919>   <#1346826604982177865>  
+- أهم ما يجب إتباعه بالسيرفر لأحسن تجربة 
 
-@𝐃𝐙𝐓 丶 𝐃𝐞𝐬𝐢𝐠𝐧𝐞𝐫
-الشرط :  تكون مصمم وتقدم خدمه لسيرفر بتصميم شي معين,
-او يتم اعطائك ياها في حين تصاميمك
-@𝐃𝐙𝐓 丶 𝐀𝐯𝐚𝐭𝐚𝐫𝐬
-الشرط : رسام افاتار او مصمم صور,
-@𝐃𝐙𝐓 丶𝐅𝐫𝐢𝐞𝐧𝐝
+- <:2DZT:1475478833678389248>  <#1346826604982177866> 
+- جديد و تحديثات السيرفر 
 
-الشرط :  تكون صديق ديركس ويعطيك ياها هوا بنفسه,
+- <:3DZT:1475478844302426296>  <#1475485136144306336> 
+- رتب إشعارات ما يهمك من الألعاب و المجالات 
 
-@𝐒𝐩𝐞𝐜𝐢𝐚𝐥 𝐅𝐫𝐢𝐞𝐧𝐝
-الشرط :  تكون من اعز الاصدقاء لديركس,
+- <:4DZT:1475478856180961373>  <#1474926897627660388> 
+- الدعم الفني لطرح المشاكل, الشكاوي ، الإستفسارات و غيرها
 
-@Old staff
-الشرط :  اداره صغرى مستقيله وتكون high admin,
-@𝐑𝐞𝐭𝐢𝐫𝐞𝐝 𝐇𝐢𝐠𝐡 𝐆𝐨𝐯𝐞𝐫𝐧𝐨𝐫
-الشرط :  اداره عليا مستقيله,
+- <:5DZT:1475478869048955025> <#1475567438346326106> 
+- إمكانية التوثيق بالنسبة للبنات 
 
-@𝐚𝐩𝐩𝐫𝐨𝐯𝐞𝐝 𝐥𝐚𝐝𝐲
-هام : رتبه يتم الحصول عليها بعد توثيقك وتقدرين تشوفين شات البنات,
-""", ephemeral=True)
+- <:6DZT:1475478880801263698>   <#1360388162559672558> 
+- روم يظهر داعمين السيرفر ببوست و المميزات الحصرية لهم 
 
-    async def support_callback(interaction):
-        await interaction.response.send_message("""نـظـام الـبـوسـت
-• البوست :1000018612: = 120 :rob:
+━━─☾  ------------  ☽─━━
 
-• دبل بوست :1000018612: = 300 :rob:
+- <:1DZT:1475478821133221919>  <#1359468127255269468> 
+- مكان الدردشة و الترفيه 
 
-• ملاحظه : ❗❗❗
+- <:2DZT:1475478833678389248>  
+https://discord.com/channels/1346826603526619206/1486722908821913692 
+- روم تبادلات بلوكس فروت
 
-• تشيل البوست باند مدى الحياه خذ حذرك
+- <:3DZT:1475478844302426296>  
+https://discord.com/channels/1346826603526619206/1487247807831212054 
+- أذكار ومقاطع دينية
 
-ولاتشيل البوست :E24A_Red:
+- <:4DZT:1475478856180961373>  <#1359995210989305947> 
+- أوامر البوت
 
-• لاستلام :rob: افتح تكت
+- <:5DZT:1475478869048955025>  <#1477032038442729512> 
+- معرفة مستوى التفاعل
 
-• في حال مرت 24 ساعه بدون فتح تكت لن يتم تسليمك :rob:...""", ephemeral=True)
+- <:6DZT:1475478880801263698>  
+https://discord.com/channels/1346826603526619206/1360004700887453966
 
+- إنشاء روم صوتي مؤقت  
+https://discord.com/channels/1346826603526619206/1360006848123637790
+
+- <:7DZT:1475478912971837450>  <#1469018876401422346> 
+- روم التريد
+
+- <:8DZT:1475478923151278120>  <#1474926897627660388> 
+- طلب وسيط
+
+━━─☾  ------------  ☽─━━
+
+- أخبار بلوكس فروت  
+https://discord.com/channels/1346826603526619206/1486724525415731250
+
+╰━━─☾  ---------  ☽─━━╯
+
+**e-dev-badge**""",
+            color=0xff0000
+        )
+
+        await interaction.followup.send(embed=map_embed, ephemeral=True)
+
+    # ================= RANK BUTTON =================
+    async def rank_callback(interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
+
+        rank_embed = discord.Embed(
+            title="⭐ نظام الرتب",
+            description="""
+TRAINER — 5 لفل كتابي  
+SOLDIER — 10 لفل كتابي  
+WARRIOR — 15 لفل كتابي  
+KNIGHT — 25 لفل كتابي  
+COLONEL — 35 لفل كتابي  
+SIR — 45 لفل كتابي  
+KING — 75 لفل كتابي + 10 صوتي  
+Mr — 100 لفل كتابي + 17 صوتي  
+
+🎥 Streamer — للستريمر  
+📺 Youtuber — 4k مشترك  
+🎨 Designer — مصمم  
+🖼 Avatars — رسام أفاتار  
+💎 Special Friend — صديق خاص
+""",
+            color=0xff0000
+        )
+        await interaction.followup.send(embed=rank_embed, ephemeral=True)
+
+    # ================= SUPPORT BUTTON =================
+    async def support_callback(interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
+
+        support_embed = discord.Embed(
+            title="💎 نظام البوست",
+            description="""
+البوست = 120 روب  
+الدبل بوست = 300 روب  
+
+⚠️ إزالة البوست = باند دائم  
+لاستلام الروب افتح تكت خلال 24 ساعة
+""",
+            color=0xff0000
+        )
+
+        await interaction.followup.send(embed=support_embed, ephemeral=True)
+
+    # ================= ربط الأزرار بالوظائف =================
     rules_button.callback = rules_callback
     rank_button.callback = rank_callback
     support_button.callback = support_callback
 
-    view = View()
+    view = View(timeout=None)
     view.add_item(rules_button)
     view.add_item(rank_button)
     view.add_item(support_button)
 
     await ctx.send(embed=embed, view=view)
 
-bot.run(os.getenv("TOKEN"))
+# شغّل البوت، ضع التوكن هنا أو استخدم env
+bot.run(os.getenv("TOKEN") or "ضع_التوكن_هنا")

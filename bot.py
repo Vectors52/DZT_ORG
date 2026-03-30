@@ -101,6 +101,9 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
             color=0xff0000
         )
 
+        # صورة أمبيد الرومات - ضع رابط الصورة هنا
+        map_embed.set_image(url="https://i.imgur.com/0CwvQp5.jpeg")
+
         await interaction.followup.send(embed=map_embed, ephemeral=True)
 
     async def rank_callback(interaction: discord.Interaction):
@@ -111,6 +114,10 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
             description=""" ... (محتوى الرتب كامل كما في كودك)""",
             color=0xff0000
         )
+
+        # صورة أمبيد الرتب - ضع رابط الصورة هنا
+        rank_embed.set_image(url="ضع_رابط_صورة_الرتب_هنا")
+
         await interaction.followup.send(embed=rank_embed, ephemeral=True)
 
     async def support_callback(interaction: discord.Interaction):
@@ -121,6 +128,9 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
             description=""" ... (محتوى الدعم كامل كما في كودك)""",
             color=0xff0000
         )
+
+        # صورة أمبيد الداعمين - ضع رابط الصورة هنا
+        support_embed.set_image(url="ضع_رابط_صورة_الداعمين_هنا")
 
         await interaction.followup.send(embed=support_embed, ephemeral=True)
 
@@ -159,6 +169,10 @@ async def rulespanel(ctx):
             description="- احترم جميع الأعضاء\n- عدم السب أو التجريح\n- الالتزام بالقنوات المناسبة\n- أي مخالفة ستؤدي إلى التحذير أو الباند",
             color=0xff0000
         )
+
+        # صورة أمبيد قوانين السيرفر - ضع رابط الصورة هنا
+        rules_embed.set_image(url="ضع_رابط_صورة_قوانين_السيرفر_هنا")
+
         await interaction.followup.send(embed=rules_embed, ephemeral=True)
 
     async def etiquette_callback(interaction: discord.Interaction):
@@ -168,6 +182,10 @@ async def rulespanel(ctx):
             description="- كن لطيفًا مع الجميع\n- لا تزعج الأعضاء في الدردشة\n- ساعد من يحتاج المساعدة",
             color=0x00ff00
         )
+
+        # صورة أمبيد السلوكيات - ضع رابط الصورة هنا
+        etiquette_embed.set_image(url="ضع_رابط_صورة_السلوكيات_هنا")
+
         await interaction.followup.send(embed=etiquette_embed, ephemeral=True)
 
     async def events_callback(interaction: discord.Interaction):
@@ -177,6 +195,10 @@ async def rulespanel(ctx):
             description="- متابعة الأخبار في قناة #News\n- المشاركة في المسابقات الأسبوعية\n- الاطلاع على الأحداث الجديدة باستمرار",
             color=0x0000ff
         )
+
+        # صورة أمبيد الفعاليات - ضع رابط الصورة هنا
+        events_embed.set_image(url="ضع_رابط_صورة_الفعاليات_هنا")
+
         await interaction.followup.send(embed=events_embed, ephemeral=True)
 
     async def ramadan_callback(interaction: discord.Interaction):
@@ -186,6 +208,10 @@ async def rulespanel(ctx):
             description="- التفاعل مع الآخرين بالاحترام\n- الامتناع عن المشاركات المزعجة أثناء الصيام\n- الالتزام بالقنوات الخاصة برمضان",
             color=0xffff00
         )
+
+        # صورة أمبيد القوانين الرمضانية - ضع رابط الصورة هنا
+        ramadan_embed.set_image(url="ضع_رابط_صورة_القوانين_الرمضانية_هنا")
+
         await interaction.followup.send(embed=ramadan_embed, ephemeral=True)
 
     rules_button.callback = rules_callback

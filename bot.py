@@ -21,7 +21,7 @@ async def servermap(ctx):
 
     embed = discord.Embed(
         title="خريطة السيرفر",
-        description="نرجو من جميع الأعضاء قراءة خريطة السيرفر عبر الأزرار بالأسفل 👇",
+        description="نرجوا من كل الأعضاء قراءة خريطة السيرفر و خاصة الجدد سواء الرومات أو الرتب لمعرفة كل ما يخص السيرفر و نيل أحسن تجربة فيه",
         color=0xff0000
     )
 
@@ -31,17 +31,73 @@ async def servermap(ctx):
 
     # ================= BUTTONS =================
 
-    rules_button = Button(label="الخريطة", emoji="📕", style=discord.ButtonStyle.primary)
+    rules_button = Button(label="الرومات", emoji="📕", style=discord.ButtonStyle.primary)
     rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
     support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
+
+    # تعديل محتوى خريطة السيرفر فقط
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
 
         map_embed = discord.Embed(
-            title="Map / خريطة السيرفر",
-            description="""/activ** ... (كل محتوى الخريطة هنا كما في كودك)""",
+            title="╭━━─☾ ---------- ☽─━━╮",
+            description="""
+__ الـرومــات <a:DZT:1352711674108575825>  __
+
+- <:1DZT:1475478821133221919>   <#1346826604982177865>  
+- أهم ما يجب إتباعه بالسيرفر لأحسن تجربة 
+
+- <:2DZT:1475478833678389248>  <#1346826604982177866>  
+- جديد و تحديثات السيرفر 
+
+- <:3DZT:1475478844302426296>  <#1475485136144306336>  
+- رتب إشعارات ما يهمك من الألعاب و المجالات 
+
+- <:4DZT:1475478856180961373>  <#1474926897627660388>  
+- الدعم الفني لطرح المشاكل, الشكاوي ، الإستفسارات و غيرها
+
+- <:5DZT:1475478869048955025> <#1475567438346326106>  
+- إمكانية التوثيق بالنسبة للبنات 
+
+- <:6DZT:1475478880801263698>   <#1360388162559672558>  
+- روم يظهر داعمين السيرفر ببوست و المميزات الحصرية لهم 
+
+━━─☾  ------------  ☽─━━
+
+- <:1DZT:1475478821133221919>  <#1359468127255269468>  
+- مكان الدردشة و الترفيه 
+
+- <:2DZT:1475478833678389248>   https://discord.com/channels/1346826603526619206/1486722908821913692
+- روم خاص بتبادلات كل بلوكس فروت .
+
+- <:3DZT:1475478844302426296>  https://discord.com/channels/1346826603526619206/1487247807831212054
+- تقديم و إستقبال أذكار و مقاطع مفيدة دينية 
+
+- <:4DZT:1475478856180961373>   <#1359995210989305947>  
+- إستعمال أوامر البوت 
+
+- <:5DZT:1475478869048955025>   <#1477032038442729512>  
+- معرفة مستواك التفاعلي في السيرفر 
+
+- <:6DZT:1475478880801263698>  https://discord.com/channels/1346826603526619206/1360004700887453966
+https://discord.com/channels/1346826603526619206/1360006848123637790
+- إنشاء روم صوتي مؤقت خاص بك ، و للتحكم به يمكنك التوجه إلى
+
+- <:7DZT:1475478912971837450>  <#1469018876401422346>  
+- يمكنكم تبادل اغلب الاشياء داخل الروم مثل روبلوكس ، باونتي الخخ.. 
+
+- <:8DZT:1475478923151278120>  <#1474926897627660388>  
+- يمكنكم طلب وسيط لضمان تبادلاتكم من خلاله .
+
+━━─☾  ------------  ☽─━━
+
+- <:1DZT:1475478821133221919> https://discord.com/channels/1346826603526619206/1486724525415731250
+- جديد بلوكس فروت من أخبار و متجر فواكهها 
+
+╰━━─☾  ---------  ☽─━━╯
+""",
             color=0xff0000
         )
 
@@ -79,8 +135,8 @@ async def servermap(ctx):
 
     await ctx.send(embed=embed, view=view)
 
-
 # ================= أمر جديد: لوحة القوانين =================
+# (يبقى كما هو دون أي تعديل)
 @bot.command()
 async def rulespanel(ctx):
     embed = discord.Embed(
@@ -88,26 +144,19 @@ async def rulespanel(ctx):
         description="نرجو من جميع الأعضاء قراءة القوانين والسلوكيات عبر الأزرار بالأسفل 👇",
         color=0xff0000
     )
-    embed.set_image(url="https://i.imgur.com/fc718ebc-8dca-4709-bbc6-d31dc9870319.png")  # الصورة المرفقة
+    embed.set_image(url="https://i.imgur.com/fc718ebc-8dca-4709-bbc6-d31dc9870319.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    # ================= BUTTONS =================
     rules_button = Button(label="قوانين السيرفر", style=discord.ButtonStyle.danger, emoji="📕")
     etiquette_button = Button(label="السلوكيات", style=discord.ButtonStyle.primary, emoji="⭐")
     events_button = Button(label="الفعاليات والتحديثات", style=discord.ButtonStyle.success, emoji="🎉")
     ramadan_button = Button(label="قوانين رمضانية", style=discord.ButtonStyle.secondary, emoji="🌙")
 
-    # ================= CALLBACKS =================
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         rules_embed = discord.Embed(
             title="📜 قوانين السيرفر",
-            description="""
-- احترم جميع الأعضاء  
-- عدم السب أو التجريح  
-- الالتزام بالقنوات المناسبة  
-- أي مخالفة ستؤدي إلى التحذير أو الباند
-""",
+            description="- احترم جميع الأعضاء\n- عدم السب أو التجريح\n- الالتزام بالقنوات المناسبة\n- أي مخالفة ستؤدي إلى التحذير أو الباند",
             color=0xff0000
         )
         await interaction.followup.send(embed=rules_embed, ephemeral=True)
@@ -116,11 +165,7 @@ async def rulespanel(ctx):
         await interaction.response.defer(ephemeral=True)
         etiquette_embed = discord.Embed(
             title="⭐ السلوكيات",
-            description="""
-- كن لطيفًا مع الجميع  
-- لا تزعج الأعضاء في الدردشة  
-- ساعد من يحتاج المساعدة
-""",
+            description="- كن لطيفًا مع الجميع\n- لا تزعج الأعضاء في الدردشة\n- ساعد من يحتاج المساعدة",
             color=0x00ff00
         )
         await interaction.followup.send(embed=etiquette_embed, ephemeral=True)
@@ -129,11 +174,7 @@ async def rulespanel(ctx):
         await interaction.response.defer(ephemeral=True)
         events_embed = discord.Embed(
             title="🎉 الفعاليات والتحديثات",
-            description="""
-- متابعة الأخبار في قناة #News  
-- المشاركة في المسابقات الأسبوعية  
-- الاطلاع على الأحداث الجديدة باستمرار
-""",
+            description="- متابعة الأخبار في قناة #News\n- المشاركة في المسابقات الأسبوعية\n- الاطلاع على الأحداث الجديدة باستمرار",
             color=0x0000ff
         )
         await interaction.followup.send(embed=events_embed, ephemeral=True)
@@ -142,11 +183,7 @@ async def rulespanel(ctx):
         await interaction.response.defer(ephemeral=True)
         ramadan_embed = discord.Embed(
             title="🌙 القوانين الرمضانية",
-            description="""
-- التفاعل مع الآخرين بالاحترام  
-- الامتناع عن المشاركات المزعجة أثناء الصيام  
-- الالتزام بالقنوات الخاصة برمضان
-""",
+            description="- التفاعل مع الآخرين بالاحترام\n- الامتناع عن المشاركات المزعجة أثناء الصيام\n- الالتزام بالقنوات الخاصة برمضان",
             color=0xffff00
         )
         await interaction.followup.send(embed=ramadan_embed, ephemeral=True)
@@ -164,6 +201,5 @@ async def rulespanel(ctx):
 
     await ctx.send(embed=embed, view=view)
 
-
-# شغّل البوت، ضع التوكن هنا أو استخدم env
+# شغّل البوت
 bot.run(os.getenv("TOKEN") or "ضع_التوكن_هنا")

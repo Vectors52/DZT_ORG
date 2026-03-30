@@ -30,14 +30,11 @@ async def servermap(ctx):
     embed.set_footer(text="© DEREK DZT BOT")
 
     # ================= BUTTONS =================
-
     rules_button = Button(label="الرومات", emoji="📕", style=discord.ButtonStyle.primary)
     rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
     support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
-
-    # تعديل محتوى خريطة السيرفر فقط
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
 
@@ -66,13 +63,13 @@ __ الـرومــات <a:DZT:1352711674108575825>  __
 
 ━━─☾  ------------  ☽─━━
 
-- <:1DZT:1475478821133221919>  <#1359468127255269468>  
+- <:1DZT:1475478821133221919> <#1359468127255269468>  
 - مكان الدردشة و الترفيه 
 
 - <:2DZT:1475478833678389248>   https://discord.com/channels/1346826603526619206/1486722908821913692
 - روم خاص بتبادلات كل بلوكس فروت .
 
-- <:3DZT:1475478844302426296>  https://discord.com/channels/1346826603526619206/1487247807831212054
+- <:3DZT:1475478844302426296> https://discord.com/channels/1346826603526619206/1487247807831212054
 - تقديم و إستقبال أذكار و مقاطع مفيدة دينية 
 
 - <:4DZT:1475478856180961373>   <#1359995210989305947>  
@@ -101,14 +98,26 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
             color=0xff0000
         )
 
-        await interaction.followup.send(embed=map_embed, ephemeral=True)
+        map_embed.set_image(url="https://i.imgur.com/0CwvQp5.jpeg")
+
+        await interaction.followup.send(
+            embed=map_embed,
+            ephemeral=True,
+            file=discord.File("/mnt/data/69fc7886-e600-4abb-896e-e27e19b25496.png", filename="server_map.png")
+        )
 
     async def rank_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
 
         rank_embed = discord.Embed(
             title="⭐ نظام الرتب",
-            description=""" ... (محتوى الرتب كامل كما في كودك)""",
+            description="""
+- رتبة المبتدئ: يبدأ بها العضو تلقائياً
+- رتبة النشط: بعد التفاعل المستمر
+- رتبة المحترف: عند المشاركة في الأحداث والمسابقات
+- رتبة النخبة: للاعضاء المميزين والداعمين
+- رتبة الإدارة: للموظفين والإداريين في السيرفر
+""",
             color=0xff0000
         )
         await interaction.followup.send(embed=rank_embed, ephemeral=True)
@@ -118,10 +127,13 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
 
         support_embed = discord.Embed(
             title="💎 نظام البوست",
-            description=""" ... (محتوى الدعم كامل كما في كودك)""",
+            description="""
+- يمكن للداعمين الحصول على مميزات حصرية
+- نشر أخبار ومحتوى خاص بالداعمين
+- التواصل مع الإدارة للحصول على المساعدة
+""",
             color=0xff0000
         )
-
         await interaction.followup.send(embed=support_embed, ephemeral=True)
 
     rules_button.callback = rules_callback
@@ -136,7 +148,6 @@ https://discord.com/channels/1346826603526619206/1360006848123637790
     await ctx.send(embed=embed, view=view)
 
 # ================= أمر جديد: لوحة القوانين =================
-# (يبقى كما هو دون أي تعديل)
 @bot.command()
 async def rulespanel(ctx):
     embed = discord.Embed(

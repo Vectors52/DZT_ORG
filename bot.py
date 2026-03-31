@@ -29,21 +29,11 @@ async def servermap(ctx):
     embed.set_thumbnail(url="https://i.imgur.com/rO3pb7D.gif")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    # ================= EMOJIS FOR BUTTONS =================
-    # ضع اسم + ID الإيموجي الخاص بكل زر هنا
-    # ملاحظة: لا تضع : داخل الاسم
-    # مثال صحيح:
-    # rules_emoji = discord.PartialEmoji(name="emoji_298", id=123456789012345678)
-
-    rules_emoji = discord.PartialEmoji(name="DZT_folder", id=1488380235262197841)
-    rank_emoji = discord.PartialEmoji(name="DZT_mention", id=1488380583980695604)
-    support_emoji = discord.PartialEmoji(name="DZT_muscle", id=1488380805934743573)
-
     # ================= BUTTONS =================
 
-    rules_button = Button(label="الرومات", emoji=rules_emoji, style=discord.ButtonStyle.primary)
-    rank_button = Button(label="الرتب", emoji=rank_emoji, style=discord.ButtonStyle.success)
-    support_button = Button(label="الداعمين", emoji=support_emoji, style=discord.ButtonStyle.secondary)
+    rules_button = Button(label="الرومات", emoji="📕", style=discord.ButtonStyle.primary)
+    rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
+    support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
 

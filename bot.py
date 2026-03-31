@@ -399,10 +399,10 @@ async def linebar(ctx):
         color=0xff0000
     )
 
-    # ضع هنا رابط صورة الخط مثل الصورة التي أرسلتها
-    line_embed.set_image(url="https://i.imgur.com/aIlc0Vm.png")
-
-    await ctx.send(embed=line_embed)
-
+   # ================= أمر جديد: خط الأخبار / الخط الفاصل بدون أمبد =================
+@bot.command()
+@has_allowed_role()
+async def linebar(ctx):
+    await ctx.send("https://i.imgur.com/aIlc0Vm.png")
 # شغّل البوت
 bot.run(os.getenv("TOKEN") or "ضع_التوكن_هنا")

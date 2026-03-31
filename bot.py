@@ -3,20 +3,38 @@ from discord.ext import commands
 from discord.ui import Button, View
 import os
 
+# الرتب المسموح لها باستخدام الأوامر
+ALLOWED_ROLES = [1346826604067684400, 1473738359221387317]
+
 intents = discord.Intents.all()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
+
+# فحص للتحقق من الرتبة
+def has_allowed_role():
+    async def predicate(ctx):
+        user_role_ids = [role.id for role in ctx.author.roles]
+        if any(role_id in ALLOWED_ROLES for role_id in user_role_ids):
+            return True
+        await ctx.send(embed=discord.Embed(
+            description="❌ هذا الأمر مخصص للإدارة فقط.",
+            color=0xff0000
+        ))
+        return False
+    return commands.check(predicate)
 
 @bot.event
 async def on_ready():
     print(f"تم تشغيل البوت: {bot.user}")
 
 @bot.command()
+@has_allowed_role()
 async def ping(ctx):
     await ctx.send("Pong 🏓")
 
 # أمر خريطة السيرفر
 @bot.command()
+@has_allowed_role()
 async def servermap(ctx):
 
     embed = discord.Embed(
@@ -296,6 +314,7 @@ __ رابـط قـروب روبـلـكـس <a:DZT:1352711674108575825> __
 
 # ================= أمر جديد: لوحة القوانين =================
 @bot.command()
+@has_allowed_role()
 async def rulespanel(ctx):
     embed = discord.Embed(
         title="📜 القوانين والسلوكيات",

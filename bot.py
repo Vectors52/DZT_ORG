@@ -32,8 +32,8 @@ async def servermap(ctx):
     # ================= BUTTONS =================
 
     rules_button = Button(label="الرومات", emoji=":emoji_298:", style=discord.ButtonStyle.primary)
-    rank_button = Button(label="الرتب", emoji="⭐", style=discord.ButtonStyle.success)
-    support_button = Button(label="الداعمين", emoji="🎧", style=discord.ButtonStyle.secondary)
+    rank_button = Button(label="الرتب", emoji=":DZT_mention:", style=discord.ButtonStyle.success)
+    support_button = Button(label="الداعمين", emoji=":DZT_muscle:", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
 

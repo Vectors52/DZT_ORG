@@ -390,19 +390,11 @@ async def rulespanel(ctx):
 
     await ctx.send(embed=embed, view=view)
 
-# ================= أمر جديد: خط الأخبار / الخط الفاصل =================
-@bot.command()
-@has_allowed_role()
-async def linebar(ctx):
-    line_embed = discord.Embed(
-        description="",
-        color=0xff0000
-    )
-
    # ================= أمر جديد: خط الأخبار / الخط الفاصل بدون أمبد =================
 @bot.command()
 @has_allowed_role()
 async def linebar(ctx):
     await ctx.send("https://i.imgur.com/aIlc0Vm.png")
+
 # شغّل البوت
 bot.run(os.getenv("TOKEN") or "ضع_التوكن_هنا")

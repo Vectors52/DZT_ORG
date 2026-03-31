@@ -31,14 +31,13 @@ async def servermap(ctx):
 
     # ================= EMOJIS FOR BUTTONS =================
     # ضع اسم + ID الإيموجي الخاص بكل زر هنا
-    # مثال:
+    # ملاحظة: لا تضع : داخل الاسم
+    # مثال صحيح:
     # rules_emoji = discord.PartialEmoji(name="emoji_298", id=123456789012345678)
-    # rank_emoji = discord.PartialEmoji(name="DZT_mention", id=123456789012345678)
-    # support_emoji = discord.PartialEmoji(name="DZT_muscle", id=123456789012345678)
 
-    rules_emoji = discord.PartialEmoji(name=":DZT_folder:", id=1488380235262197841)
-    rank_emoji = discord.PartialEmoji(name=":DZT_mention:", id=1488380583980695604)
-    support_emoji = discord.PartialEmoji(name=":DZT_muscle:", id=1488381803009020066)
+    rules_emoji = discord.PartialEmoji(name="DZT_folder", id=1488380235262197841)
+    rank_emoji = discord.PartialEmoji(name="DZT_mention", id=1488380583980695604)
+    support_emoji = discord.PartialEmoji(name="DZT_muscle", id=1488381803009020066)
 
     # ================= BUTTONS =================
 

@@ -31,9 +31,9 @@ async def servermap(ctx):
 
     # ================= BUTTONS =================
 
-    rules_button = Button(label="الرومات", emoji="https://cdn.discordapp.com/emojis/1488380683285168178.webp?size=96", style=discord.ButtonStyle.primary)
-    rank_button = Button(label="الرتب", emoji="https://cdn.discordapp.com/emojis/1488380683285168178.webp?size=96", style=discord.ButtonStyle.success)
-    support_button = Button(label="الداعمين", emoji="https://cdn.discordapp.com/emojis/1488380683285168178.webp?size=96", style=discord.ButtonStyle.secondary)
+    rules_button = Button(label="الرومات", emoji="<:emoji_1:1488380213019807744>", style=discord.ButtonStyle.primary)
+    rank_button = Button(label="الرتب", emoji="<:emoji_2:1488351778717307022>", style=discord.ButtonStyle.success)
+    support_button = Button(label="الداعمين", emoji="<:emoji_3:1488380683285168178>", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
 
@@ -295,7 +295,6 @@ __ رابـط قـروب روبـلـكـس <a:DZT:1352711674108575825> __
     await ctx.send(embed=embed, view=view)
 
 # ================= أمر جديد: لوحة القوانين =================
-# (يبقى كما هو دون أي تعديل)
 @bot.command()
 async def rulespanel(ctx):
     embed = discord.Embed(
@@ -319,7 +318,6 @@ async def rulespanel(ctx):
             color=0xff0000
         )
 
-        # صورة أمبيد قوانين السيرفر - ضع رابط الصورة هنا
         rules_embed.set_image(url="ضع_رابط_صورة_قوانين_السيرفر_هنا")
 
         await interaction.followup.send(embed=rules_embed, ephemeral=True)
@@ -332,7 +330,6 @@ async def rulespanel(ctx):
             color=0x00ff00
         )
 
-        # صورة أمبيد السلوكيات - ضع رابط الصورة هنا
         etiquette_embed.set_image(url="ضع_رابط_صورة_السلوكيات_هنا")
 
         await interaction.followup.send(embed=etiquette_embed, ephemeral=True)
@@ -345,7 +342,6 @@ async def rulespanel(ctx):
             color=0x0000ff
         )
 
-        # صورة أمبيد الفعاليات - ضع رابط الصورة هنا
         events_embed.set_image(url="ضع_رابط_صورة_الفعاليات_هنا")
 
         await interaction.followup.send(embed=events_embed, ephemeral=True)
@@ -358,7 +354,6 @@ async def rulespanel(ctx):
             color=0xffff00
         )
 
-        # صورة أمبيد القوانين الرمضانية - ضع رابط الصورة هنا
         ramadan_embed.set_image(url="ضع_رابط_صورة_القوانين_الرمضانية_هنا")
 
         await interaction.followup.send(embed=ramadan_embed, ephemeral=True)

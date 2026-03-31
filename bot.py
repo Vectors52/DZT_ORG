@@ -49,8 +49,8 @@ async def servermap(ctx):
 
     # ================= BUTTONS =================
 
-    rules_button = Button(label="الرومات", emoji="<:emoji_1:1488380213019807744>", style=discord.ButtonStyle.primary)
-    rank_button = Button(label="الرتب", emoji="<:emoji_2:1488351778717307022>", style=discord.ButtonStyle.success)
+    rules_button = Button(label="الرومات", emoji="<:emoji_1:1488380213019807744>", style=discord.ButtonStyle.secondary)
+    rank_button = Button(label="الرتب", emoji="<:emoji_2:1488351778717307022>", style=discord.ButtonStyle.secondary)
     support_button = Button(label="الداعمين", emoji="<:emoji_3:1488380683285168178>", style=discord.ButtonStyle.secondary)
 
     # ================= CALLBACKS =================
@@ -324,9 +324,9 @@ async def rulespanel(ctx):
     embed.set_image(url="https://i.imgur.com/fc718ebc-8dca-4709-bbc6-d31dc9870319.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    rules_button = Button(label="قوانين السيرفر", style=discord.ButtonStyle.danger, emoji="📕")
-    etiquette_button = Button(label="السلوكيات", style=discord.ButtonStyle.primary, emoji="⭐")
-    events_button = Button(label="الفعاليات والتحديثات", style=discord.ButtonStyle.success, emoji="🎉")
+    rules_button = Button(label="قوانين السيرفر", style=discord.ButtonStyle.secondary, emoji="📕")
+    etiquette_button = Button(label="السلوكيات", style=discord.ButtonStyle.secondary, emoji="⭐")
+    events_button = Button(label="الفعاليات والتحديثات", style=discord.ButtonStyle.secondary, emoji="🎉")
     ramadan_button = Button(label="قوانين رمضانية", style=discord.ButtonStyle.secondary, emoji="🌙")
 
     async def rules_callback(interaction: discord.Interaction):
@@ -390,7 +390,7 @@ async def rulespanel(ctx):
 
     await ctx.send(embed=embed, view=view)
 
-   # ================= أمر جديد: خط الأخبار / الخط الفاصل بدون أمبد =================
+# ================= أمر جديد: خط الأخبار / الخط الفاصل بدون أمبد =================
 @bot.command()
 @has_allowed_role()
 async def linebar(ctx):

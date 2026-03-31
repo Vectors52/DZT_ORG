@@ -37,7 +37,7 @@ async def servermap(ctx):
 
     rules_emoji = discord.PartialEmoji(name="DZT_folder", id=1488380235262197841)
     rank_emoji = discord.PartialEmoji(name="DZT_mention", id=1488380583980695604)
-    support_emoji = discord.PartialEmoji(name="DZT_muscle", id=1488381803009020066)
+    support_emoji = discord.PartialEmoji(name="DZT_muscle", id=1488380805934743573)
 
     # ================= BUTTONS =================
 

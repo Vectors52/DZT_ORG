@@ -317,27 +317,48 @@ __ رابـط قـروب روبـلـكـس <a:DZT:1352711674108575825> __
 @has_allowed_role()
 async def rulespanel(ctx):
     embed = discord.Embed(
-        title="📜 القوانين والسلوكيات",
-        description="نرجو من جميع الأعضاء قراءة القوانين والسلوكيات عبر الأزرار بالأسفل 👇",
+        title=" القوانين ",
+        description="ننرجوا من كل الأعضاء قراءة القوانين كاملة بكل التفاصيل تجنبا للعقوبات و لنيل أحسن تجربة في السيرفر   ",
         color=0xff0000
     )
     embed.set_image(url="https://i.imgur.com/fc718ebc-8dca-4709-bbc6-d31dc9870319.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    rules_button = Button(label="قوانين السيرفر", style=discord.ButtonStyle.secondary, emoji="📕")
-    etiquette_button = Button(label="السلوكيات", style=discord.ButtonStyle.secondary, emoji="⭐")
-    events_button = Button(label="الفعاليات والتحديثات", style=discord.ButtonStyle.secondary, emoji="🎉")
-    ramadan_button = Button(label="قوانين رمضانية", style=discord.ButtonStyle.secondary, emoji="🌙")
+    rules_button = Button(label="السلوكيات", emoji="<:emoji_304~1:1488756086453440644>", style=discord.ButtonStyle.secondary)
+    etiquette_button = Button(label="التوثيق", emoji="<:emoji_305:1488738451808456704>", style=discord.ButtonStyle.secondary)
+    events_button = Button(label=" التبادل والتجارة", emoji="<:emoji_306:1488738461199372350>", style=discord.ButtonStyle.secondary)
+    ramadan_button = Button(label=" رمضان ", emoji="<:emoji_303:1488738470993203322>", style=discord.ButtonStyle.secondary)
 
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         rules_embed = discord.Embed(
-            title="📜 قوانين السيرفر",
-            description="- احترم جميع الأعضاء\n- عدم السب أو التجريح\n- الالتزام بالقنوات المناسبة\n- أي مخالفة ستؤدي إلى التحذير أو الباند",
+            title=" السلوكيات ",
+            description="""**
+
+- <:1DZT:1475478821133221919>   السب بكل أنواعه سواء في الرومات الكتابية أو الصوتية 
+
+- <:2DZT:1475478833678389248>  يُسمح المزح بين الأصدقاء في حال غياب الشكاوي من الطرفين أو السب أو الأمور الغير مرغوبة ، و يُمنع إهانة من لا تعرف 
+
+- <:3DZT:1475478844302426296>   كل ما يتعلق بالمثلية و المياعة ( ولد يتصرف تصرفات أُنثوية ) ممنوع 
+
+- <:4DZT:1475478856180961373>   يُمنع إرسال كل أنواع الروابط بإستثناء 
+
+- <:5DZT:1475478869048955025>   نقبل الشكاوي المتعلقة بالخاص في حال كانت بدايته من هنا ، بإستثناء السرقة تُقبل شكوته من أي خادم 
+
+- <:6DZT:1475478880801263698>   يُمنع ذكر كل المواضيع و القضايا و النزاعات و الخلافات السياسية و الدينية و كل ما قد يُسبب فتنة بينكم 
+
+- <:6DZT:1475478880801263698>     يُمنع الإنتحال بتاتا 
+
+- <:8DZT:1475478923151278120>   يُمنع التدخل الغير مرغوب في شؤون الإدارة نظرا لتلقيهم تعليمات لعقوبات المخالفات و التصرف ، كما يُمنع منشن الرتب الإدارية  ما عدى عند غيابهم لمدة معتبرة أو حدوث مشكلة معينة  في غيابهم 
+
+- <:9DZT:1475478933439910111>    مقاطع الأغاني ممنوعة في حال عدم التنبيه على وجودها 
+
+> __ ملاحظة : كل ما تم ذِكره هنا ينطبق على الرومات الصوتية  __ <a:DZT:1352711674108575825>    
+**""",
             color=0xff0000
         )
 
-        rules_embed.set_image(url="ضع_رابط_صورة_قوانين_السيرفر_هنا")
+        rules_embed.set_image(url="https://i.imgur.com/TEipJq2.png")
 
         await interaction.followup.send(embed=rules_embed, ephemeral=True)
 

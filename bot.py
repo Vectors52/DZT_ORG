@@ -324,10 +324,10 @@ async def rulespanel(ctx):
     embed.set_image(url="https://i.imgur.com/cVkIKFd.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    rules_button = Button(label="السلوكيات", emoji="<:emoji_304~1:1488756086453440644>", style=discord.ButtonStyle.secondary)
-    etiquette_button = Button(label="التوثيق", emoji="<:emoji_305:1488738451808456704>", style=discord.ButtonStyle.secondary)
-    events_button = Button(label=" التبادل والتجارة", emoji="<:emoji_306:1488738461199372350>", style=discord.ButtonStyle.secondary)
-    ramadan_button = Button(label=" رمضان ", emoji="<:emoji_303:1488738470993203322>", style=discord.ButtonStyle.secondary)
+    rules_button = Button(label=" السلوكيات", style=discord.ButtonStyle.secondary, emoji="📕")
+    etiquette_button = Button(label="التوثيق", style=discord.ButtonStyle.secondary, emoji="⭐")
+    events_button = Button(label=" التبادل والتجارة ", style=discord.ButtonStyle.secondary, emoji="🎉")
+    ramadan_button = Button(label="رمضان ", style=discord.ButtonStyle.secondary, emoji="🌙")
 
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)

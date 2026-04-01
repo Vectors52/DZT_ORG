@@ -321,7 +321,7 @@ async def rulespanel(ctx):
         description="ننرجوا من كل الأعضاء قراءة القوانين كاملة بكل التفاصيل تجنبا للعقوبات و لنيل أحسن تجربة في السيرفر   ",
         color=0xff0000
     )
-    embed.set_image(url="https://i.imgur.com/fc718ebc-8dca-4709-bbc6-d31dc9870319.png")
+    embed.set_image(url="https://i.imgur.com/cVkIKFd.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
     rules_button = Button(label="السلوكيات", emoji="<:emoji_304~1:1488756086453440644>", style=discord.ButtonStyle.secondary)

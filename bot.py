@@ -324,10 +324,10 @@ async def rulespanel(ctx):
     embed.set_image(url="https://i.imgur.com/cVkIKFd.png")
     embed.set_footer(text="© DEREK DZT BOT")
 
-    rules_button = Button(label=" السلوكيات", style=discord.ButtonStyle.secondary, emoji="📕")
-    etiquette_button = Button(label="التوثيق", style=discord.ButtonStyle.secondary, emoji="⭐")
-    events_button = Button(label=" التبادل والتجارة ", style=discord.ButtonStyle.secondary, emoji="🎉")
-    ramadan_button = Button(label="رمضان ", style=discord.ButtonStyle.secondary, emoji="🌙")
+    rules_button = Button(label=" السلوكيات", style=discord.ButtonStyle.secondary, emoji="<:emoji_rules:1488702484234108998>")
+    etiquette_button = Button(label="التوثيق", style=discord.ButtonStyle.secondary, emoji="<:emoji_verify:1488702491435597844>")
+    events_button = Button(label=" التبادل والتجارة ", style=discord.ButtonStyle.secondary, emoji="<:emoji_trade:1488702501317251223>")
+    ramadan_button = Button(label="رمضان ", style=discord.ButtonStyle.secondary, emoji="<:emoji_ramadan:1488702466974552126>")
 
     async def rules_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
@@ -353,7 +353,7 @@ async def rulespanel(ctx):
 
 - <:9DZT:1475478933439910111>    مقاطع الأغاني ممنوعة في حال عدم التنبيه على وجودها 
 
-> __ ملاحظة : كل ما تم ذِكره هنا ينطبق على الرومات الصوتية  __ <a:DZT:1352711674108575825>    
+> __ ملاحظة : كل ما تم ذِكره هنا ينطبق على الرومات الصوتية  __ <a:DZT:1352711674108575825>     
 **""",
             color=0xff0000
         )
@@ -365,24 +365,24 @@ async def rulespanel(ctx):
     async def etiquette_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         etiquette_embed = discord.Embed(
-            title="⭐ السلوكيات",
-            description="- كن لطيفًا مع الجميع\n- لا تزعج الأعضاء في الدردشة\n- ساعد من يحتاج المساعدة",
+            title="⭐ التوثيق",
+            description="- اتبع خطوات التوثيق الموضحة في القناة\n- تأكد من صحة البيانات المقدمة\n- في حال واجهت مشكلة تواصل مع الإدارة",
             color=0x00ff00
         )
 
-        etiquette_embed.set_image(url="ضع_رابط_صورة_السلوكيات_هنا")
+        etiquette_embed.set_image(url="ضع_رابط_صورة_التوثيق_هنا")
 
         await interaction.followup.send(embed=etiquette_embed, ephemeral=True)
 
     async def events_callback(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         events_embed = discord.Embed(
-            title="🎉 الفعاليات والتحديثات",
-            description="- متابعة الأخبار في قناة #News\n- المشاركة في المسابقات الأسبوعية\n- الاطلاع على الأحداث الجديدة باستمرار",
+            title="🎉 التبادل والتجارة",
+            description="- التزم برومات التبادل فقط\n- الإدارة غير مسؤولة عن التبادلات خارج نظام الوسيط\n- يمنع النصب والاحتيال نهائياً",
             color=0x0000ff
         )
 
-        events_embed.set_image(url="ضع_رابط_صورة_الفعاليات_هنا")
+        events_embed.set_image(url="ضع_رابط_صورة_التبادل_هنا")
 
         await interaction.followup.send(embed=events_embed, ephemeral=True)
 
